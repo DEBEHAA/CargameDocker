@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  module1:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./assets:/usr/share/nginx/html/assets
+      - ./car.html:/usr/share/nginx/html/index.html  # Serve car.html as default
+    container_name: module1_container
+
+  module2:
+    build: .
+    ports:
+      - "8081:80"
+    volumes:
+      - ./assets:/usr/share/nginx/html/assets 
+      - ./index.html:/usr/share/nginx/html/index.html  # Serve index.html as default
+    container_name: module2_container

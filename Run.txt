@@ -1,0 +1,12 @@
+Setup:
+docker-compose down --volumes
+docker-compose build --no-cache
+docker-compose up
+
+Output:
+http://localhost:8080
+
+Container:
+docker ps
+docker stop <container_id>
+docker rm <container_id>
